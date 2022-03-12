@@ -23,7 +23,7 @@ public class pixelCharacterMovement : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        if(x > 0.5f || x < -0.5f)
+        if (x > 0.5f || x < -0.5f)
         {
             transform.Translate(new Vector3(x * moveSpeed * Time.deltaTime, 0f, 0f));
         }
