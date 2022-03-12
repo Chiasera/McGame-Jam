@@ -1,0 +1,13 @@
+spine.png
+size:3714,1827
+filter:Linear,Linear
+Big_guys_mouth
+bounds:2667,774,1051,1045
+offsets:1340,511,3840,2160
+rotate:90
+Paint Layer 2
+bounds:2,2,1823,2663
+rotate:90
+left_eye
+bounds:2667,743,29,30
+rotate:90
