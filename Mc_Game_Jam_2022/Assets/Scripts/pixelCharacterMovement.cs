@@ -11,7 +11,6 @@ public class pixelCharacterMovement : MonoBehaviour
     private bool playerMoving;
     public Vector2 lastMove;
     private Rigidbody2D player;
-    private static bool playerExists;
 
     void Start()
     {

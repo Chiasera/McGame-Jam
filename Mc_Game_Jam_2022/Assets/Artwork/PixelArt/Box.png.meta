@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: 4727633781103762509
     second: RegBox_0
+  - first:
+      213: -7871530612760024436
+    second: Box_Top
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -138,7 +141,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,6 +149,27 @@ TextureImporter:
       bones: []
       spriteID: d4c93d630edeb9140800000000000000
       internalID: 4727633781103762509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box_Top
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 40
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8a63d3ec94b2c290800000000000000
+      internalID: -7871530612760024436
       vertices: []
       indices: 
       edges: []
