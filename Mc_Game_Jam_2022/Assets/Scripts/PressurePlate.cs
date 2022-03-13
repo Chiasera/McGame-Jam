@@ -5,6 +5,7 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     private Animator animator;
+    private bool isPressed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +19,12 @@ public class PressurePlate : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
+    private void OnTriggerEnter2D(Collider2D collider)
+    { 
         animator.SetBool("Touched", true);
-        Debug.Log("Hit");
+        if(isPressed != true) {
+            FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+        }
+        isPressed = true;
     }
 }

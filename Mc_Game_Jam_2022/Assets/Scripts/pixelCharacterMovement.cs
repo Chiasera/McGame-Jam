@@ -8,7 +8,7 @@ public class pixelCharacterMovement : MonoBehaviour
 {
     public float moveSpeed;
     private Animator anim;
-    private bool playerMoving;
+    //private bool playerMoving;
     public Vector2 lastMove;
     private Rigidbody2D player;
 
@@ -20,7 +20,7 @@ public class pixelCharacterMovement : MonoBehaviour
 
     void Update()
     {
-        playerMoving = false;
+        //playerMoving = false;
         float xAxis = Input.GetAxisRaw("Horizontal");
         float yAxis = Input.GetAxisRaw("Vertical");
         player.velocity = new Vector2(xAxis * moveSpeed, yAxis * moveSpeed);
@@ -28,17 +28,17 @@ public class pixelCharacterMovement : MonoBehaviour
         if (xAxis != 0f)
         {
             lastMove = new Vector2(xAxis, 0f);
-            playerMoving = true;
+           // playerMoving = true;
         }
         if (yAxis != 0f)
         {
             lastMove = new Vector2(0f, yAxis);
-            playerMoving = true;
+            //playerMoving = true;
         }
 
         anim.SetFloat("MoveX", xAxis);
         anim.SetFloat("MoveY", yAxis);
-        anim.SetBool("Player Moving", playerMoving);
+        //anim.SetBool("Player Moving", playerMoving);
         //anim.SetFloat("Last Move X", lastMove.x);
         //anim.SetFloat("Last Move Y", lastMove.y);
     }
