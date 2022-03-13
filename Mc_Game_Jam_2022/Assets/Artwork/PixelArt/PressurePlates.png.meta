@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 7af5e9625aaf8224bbe9b3671bb8c03b
+guid: cd806df267af9d740af80358f2293740
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4727633781103762509
-    second: RegBox_0
+      213: 7300235982584268539
+    second: PressurePlates_0
   - first:
-      213: -7871530612760024436
-    second: Box_Top
+      213: 8460211524913329870
+    second: PressurePlates_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -133,33 +133,33 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RegBox_0
+      name: PressurePlates_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 24
-        width: 32
-        height: 32
+        x: 4
+        y: 28
+        width: 16
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4c93d630edeb9140800000000000000
-      internalID: 4727633781103762509
+      spriteID: bf6c576a2f5af4560800000000000000
+      internalID: 7300235982584268539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Box_Top
+      name: PressurePlates_1
       rect:
         serializedVersion: 2
-        x: 13
-        y: 40
-        width: 32
+        x: 36
+        y: 29
+        width: 16
         height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -168,8 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8a63d3ec94b2c290800000000000000
-      internalID: -7871530612760024436
+      spriteID: ec6ff1bce85b86570800000000000000
+      internalID: 8460211524913329870
       vertices: []
       indices: 
       edges: []
@@ -177,7 +177,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: ae97efa97347e034c9a2fefb59698a37
     internalID: 0
     vertices: []
     indices: 

@@ -6,34 +6,41 @@ using UnityEngine;
 //[RequireComponent(typeof(BoxCollider2D))]
 public class pixelCharacterMovement : MonoBehaviour
 {
-
-    private BoxCollider2D boxCollider;
-    private Animator animator;
-
     public float moveSpeed;
-    
-    private void Start()
+    private Animator anim;
+    private bool playerMoving;
+    public Vector2 lastMove;
+    private Rigidbody2D player;
+
+    void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
+        player = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+        playerMoving = false;
+        float xAxis = Input.GetAxisRaw("Horizontal");
+        float yAxis = Input.GetAxisRaw("Vertical");
+        player.velocity = new Vector2(xAxis * moveSpeed, yAxis * moveSpeed);
 
-        if(x > 0.5f || x < -0.5f)
+        if (xAxis != 0f)
         {
-            transform.Translate(new Vector3(x * moveSpeed * Time.deltaTime, 0f, 0f));
+            lastMove = new Vector2(xAxis, 0f);
+            playerMoving = true;
+        }
+        if (yAxis != 0f)
+        {
+            lastMove = new Vector2(0f, yAxis);
+            playerMoving = true;
         }
 
-        if (y > 0.5f || y < -0.5f)
-        {
-            transform.Translate(new Vector3(0f, y * moveSpeed * Time.deltaTime, 0f));
-        }
-
-        animator.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
-        animator.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+        anim.SetFloat("MoveX", xAxis);
+        anim.SetFloat("MoveY", yAxis);
+        anim.SetBool("Player Moving", playerMoving);
+        //anim.SetFloat("Last Move X", lastMove.x);
+        //anim.SetFloat("Last Move Y", lastMove.y);
     }
 }
+
