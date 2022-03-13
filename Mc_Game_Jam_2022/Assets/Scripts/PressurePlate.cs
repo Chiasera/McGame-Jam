@@ -6,6 +6,7 @@ public class PressurePlate : MonoBehaviour
 {
     private Animator animator;
     private bool isPressed = false;
+    public bool isMain;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,12 @@ public class PressurePlate : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     { 
         animator.SetBool("Touched", true);
-        if(isPressed != true) {
+        if(isPressed != true && isMain) {
             FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+        }
+        if(isPressed != true && !isMain)
+        {
+            FindObjectOfType<Congrats>().letsGetIt();
         }
         isPressed = true;
     }
