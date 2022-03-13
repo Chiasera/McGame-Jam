@@ -1,0 +1,5 @@
+spine.png
+size:646,665
+filter:Linear,Linear
+Paint Layer 1
+bounds:2,2,642,661

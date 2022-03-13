@@ -11,12 +11,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - cameraConfiner
+  - player
+  - ground_collider
+  - lantern
+  - firefly
+  - fadeTrigger
   - 
   - 
   - 
