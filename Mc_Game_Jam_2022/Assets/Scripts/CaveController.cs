@@ -17,7 +17,7 @@ public class CaveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    if(LanternController.nbLanternsSc1 == 0)
+    if(LanternController.nbLanterns == 0)
         {
             animator.SetBool("riseUp", true);
         }
@@ -37,6 +37,11 @@ public class CaveController : MonoBehaviour
     private void ActivateNextScene()
     {
         loadSceneTrigger.setActive(true);
+    }
+
+    private void HoldCurrentScene()
+    {
+        loadSceneTrigger.setActive(false);
     }
 
 }

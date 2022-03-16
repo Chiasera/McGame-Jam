@@ -156,7 +156,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1232157115
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &7285167749675095366
@@ -252,8 +252,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17114511, y: 4.218584}
-  m_Size: {x: 3.922748, y: 8.994414}
+  m_Offset: {x: -0.09074811, y: 4.218584}
+  m_Size: {x: 3.3989615, y: 8.994414}
   m_Direction: 0
 --- !u!114 &7285167749675095363
 MonoBehaviour:

@@ -11,11 +11,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private bool isFacingLeft;
     private bool jumpKeyPressed;
+    private bool frozen;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        StartCoroutine(FreezeEnterScene());
         animator = this.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         isFacingLeft = true;
@@ -29,7 +30,13 @@ public class PlayerController : MonoBehaviour
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
 
-        if(h<0 && !isFacingLeft)
+        if (frozen)
+        {
+            h = 0;
+            v = 0;
+        } 
+
+        if (h<0 && !isFacingLeft)
         {
             animator.SetBool("turnLeft", true);
             animator.SetBool("turnRight", false);
@@ -53,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
         if (animator.GetBool("canJump") == true) //check if  player can jump
         {
-            if (jumpKeyPressed)
+            if (jumpKeyPressed && Mathf.Abs(v) > 0)
             {
                 Jump();
                 animator.SetBool("isJumping", true);
@@ -83,7 +90,6 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.layer == 8)
         {
-            Debug.Log("YOO");
             animator.SetBool("isGrounded", true);
             animator.SetBool("isJumping", false);
             animator.SetBool("canJump", true);
@@ -92,7 +98,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        Debug.Log("yoo");
         if(collision.gameObject.layer == 8)
         {
             animator.SetBool("isGrounded", false);
@@ -108,4 +113,10 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("canJump", false);
     }
 
+    public IEnumerator FreezeEnterScene()
+    {
+        frozen = true;
+        yield return new WaitForSeconds(1);
+        frozen = false;
+    }
 }

@@ -5,29 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class LevelChanger : MonoBehaviour
 {
-
+    private PlayerController player;
     public Animator animator;
-    private int sceneToLoad;
-    public LoadSceneTrigger loadSceneTrigger;
+    private string sceneToLoad;
     // Start is called before the first frame update
+
+    private void Start()
+    {
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-             if(loadSceneTrigger.getSceneState() == true)
-             {
-                FadeToLevel(1);
-             }   
+     
     }
 
-    public void FadeToLevel(int levelIndex)
+    public void FadeToLevel(string sceneName)
     {
-        sceneToLoad = levelIndex;
+        player.FreezeEnterScene();
+        sceneToLoad = sceneName;
         animator.SetTrigger("FadeOut");
+
     }
     public void OnFadeComplete()
     {
         SceneManager.LoadScene(sceneToLoad);
+        
+        
     }
-
 }

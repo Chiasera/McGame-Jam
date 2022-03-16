@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class LanternController : MonoBehaviour
 {
 
-    public static int nbLanternsSc1 = 4;
+    public static int nbLanterns;
     private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+    
         animator = GetComponent<Animator>();
     }
 
@@ -28,9 +28,14 @@ public class LanternController : MonoBehaviour
             {
                 animator.SetBool("firefly", true);
                 FireflyController.setNbFireflies(FireflyController.getNbFireflies() - 1);
-                nbLanternsSc1--;
+                nbLanterns--;
                 Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
             }
         }
+    }
+
+    public static void setNbLanterns(int newNbLanterns)
+    {
+        nbLanterns = newNbLanterns;
     }
 }
